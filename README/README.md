@@ -61,11 +61,12 @@ The playbook implements the following tasks:
 - First the docker.io service is installed; this service installs the Docker platform.
 - Next, python3-pip is installed, which is a package management system that installs Python 3.
 - Then docker is installed, which is a module that allows the use of Docker commands within Python apps.
-- A memory expansion is then required because of requirements to run Docker. The minimum RAM that needs to be dedicated to docker is 262,144, which is what is was set at for this instance.
+- A memory expansion is then required because of requirements to run Docker. The minimum RAM that needs to be dedicated to docker is 262,144, which is what it was set at for this instance.
 - Lastly, the Docker ELK container is downloaded and launched, ensuring that the service is enabled on boot.
 
 The following screenshot displays the result of running `docker ps` after successfully configuring the ELK instance.
 
+(Images/Ansible_output.png)
 ![TODO: Update the path with the name of your screenshot of docker ps output](Images/docker_ps_output.png)
 
 ### Target Machines & Beats
