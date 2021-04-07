@@ -66,7 +66,7 @@ The playbook implements the following tasks:
 
 The following screenshot displays the result of running `docker ps` after successfully configuring the ELK instance.
 
-!(https://github.com/CyberStrax/Strax-Stuff/blob/main/README/Images/Anisble%20output.png)
+![](https://github.com/CyberStrax/Strax-Stuff/blob/main/README/Images/Anisble%20output.png)
 
 ### Target Machines & Beats
 This ELK server is configured to monitor the following machines:
