@@ -58,9 +58,11 @@ A summary of the access policies in place can be found in the table below.
 Ansible was used to automate configuration of the ELK machine. No configuration was performed manually, which is advantageous because it turns a complex, time consuming task into something that can be done to scale quickly and efficiently, freeing up time for other tasks.
 
 The playbook implements the following tasks:
-- _TODO: In 3-5 bullets, explain the steps of the ELK installation play. E.g., install Docker; download image; etc._
-- ...
-- ...
+- First the docker.io service is installed; this service installs the Docker platform.
+- Next, python3-pip is installed, which is a package management system that installs Python 3.
+- Then docker is installed, which is a module that allows the use of Docker commands within Python apps.
+- A memory expansion is then required because of requirements to run Docker. The minimum RAM that needs to be dedicated to docker is 262,144, which is what is was set at for this instance.
+- Lastly, the Docker ELK container is downloaded and launched, ensuring that the service is enabled on boot.
 
 The following screenshot displays the result of running `docker ps` after successfully configuring the ELK instance.
 
