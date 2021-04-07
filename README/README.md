@@ -86,9 +86,9 @@ These Beats allow us to collect the following information from each machine:
 In order to use the playbook, you will need to have an Ansible control node already configured. Assuming you have such a control node provisioned: 
 
 SSH into the control node and follow the steps below:
-- Copy the playbook file to the Jump Box VM, which is serving as the Ansible control node.
-- Update the Ansible configuration file to include the admin username
-- Update the hosts file to include the web server VM IP addresses and the ELK VM IP address, along with instruction to use Python 3. 
+- Copy the [playbook file] to the Jump Box VM, which is serving as the Ansible control node.
+- Update the `Ansible configuration` file to include the admin username
+- Update the `hosts` file to include the web server VM IP addresses and the ELK VM IP address, along with instruction to use Python 3. 
 - Run the playbook, and navigate to ____ to check that the installation worked as expected.
 
 _TODO: Answer the following questions to fill in the blanks:_
