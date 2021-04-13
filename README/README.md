@@ -82,13 +82,13 @@ These Beats allow us to collect the following information from each machine:
 - **Filebeat:** Filebeat serves the purpose of monitoring log files in specified directories and log events, so they can be forwarded to Logstash and Elasticsearch for indexing; the log data consists of what files have changed and when.
 - **Metricbeat:** Metricbeat allows for the monitoring of various metrics of machines on a system in order to gauge their operational health. Commonly, metrics such as CPU usage and uptime are chosen, along with other relavant ones, to ensure there is no misuse or suspicious activity.
 
-### Using the Playbooks
-In order to use the playbooks, you will need to have an Ansible control node already configured. Assuming you have such a control node provisioned: 
+### Using the Playbook
+In order to use the playbook, you will need to have an Ansible control node already configured. Assuming you have such a control node provisioned: 
 
 SSH into the control node and follow the steps below:
-- Copy playbooks `filebeat.yml` and `metricbeat.yml` to the Jump Box VM, which is serving as the Ansible control node.
-- Update the `Ansible configuration` file to include the admin username.
-- Update the Ansible `hosts` file to include the web server VM IP addresses and the ELK VM IP address, along with instruction to use Python 3. 
+- Copy the playbook, `elk.yml`, to `/etc/ansible` on the Jump Box VM, which is serving as the Ansible control node.
+- Update the Ansible `hosts` file to include the Web Server VM IP addresses and the ELK VM IP address, along with instruction to use Python 3. Header elements are utilized in the `hosts` file to ensure IP addresses are properly grouped to differentiate where each service should be installed. A sample of the Ansible `hosts` file:
+ 
 - Run the playbook, and navigate to `http://10.1.0.4:5601/app/kibana` to check that the installation worked as expected.
 
 _TODO: Answer the following questions to fill in the blanks:_
