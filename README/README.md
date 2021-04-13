@@ -64,9 +64,7 @@ The playbook implements the following tasks:
 - A memory expansion is required to run the Elk container. The minimum value that the RAM needs to be set at is `262144`.
 - Lastly, the Docker ELK container is downloaded and launched, ensuring that the service is enabled on boot.
 
-The following screenshot displays the result of running `sudo docker ps` after successfully configuring the ELK instance.
-
-![docker ps output](https://github.com/CyberStrax/Strax-Stuff/blob/main/README/Images/docker_ps.png)
+The following code block displays the result of running `sudo docker ps` after successfully configuring the ELK instance.
 ```
 sysadmin@elk:~$ sudo docker ps
 CONTAINER ID        IMAGE               COMMAND                  CREATED             STATUS              PORTS                                                                              NAMES
@@ -92,7 +90,7 @@ In order to use the playbook, you will need to have an Ansible control node alre
 
 SSH into the control node and follow the steps below:
 - Copy the playbook, `elk.yml`, to `/etc/ansible` on the Jump Box VM, which is serving as the Ansible control node.
-- Update the Ansible `hosts` file to include the Web Server VM IP addresses and the ELK VM IP address, along with instruction to use Python 3. Header elements are utilized in the `hosts` file to ensure IP addresses are properly grouped to differentiate where each service should be installed. The following is a sample of the Ansible `hosts` file:
+- Update the Ansible `hosts` file by using `sudo /etc/ansible/hosts`. Information added will include the Web Server VM IP addresses and the ELK VM IP address, along with instruction to use Python 3. Header elements are utilized in the `hosts` file to ensure IP addresses are properly grouped to differentiate where each service should be installed. In this instance, `webservers` and `elk` were used as headers. The following is a sample of the Ansible `hosts` file:
 ```
 # List the IP Addresses of your webservers
 # You should have at least 2 IP addresses
@@ -106,11 +104,6 @@ SSH into the control node and follow the steps below:
 [elk]
 10.1.0.4 ansible_python_interpreter=/usr/bin/python3
 ```
-- Run the playbook, and navigate to `http://10.1.0.4:5601/app/kibana` to check that the installation worked as expected.
-
-_TODO: Answer the following questions to fill in the blanks:_
-- _Which file is the playbook? Where do you copy it?_
-- _Which file do you update to make Ansible run the playbook on a specific machine? How do I specify which machine to install the ELK server on versus which to install Filebeat on?_
-- _Which URL do you navigate to in order to check that the ELK server is running?
+- Run the playbook using `ansible-playbook elk.yml`, and navigate to `http://10.1.0.4:5601/app/kibana` to check that the installation worked as expected.
 
 _As a **Bonus**, provide the specific commands the user will need to run to download the playbook, update the files, etc._
