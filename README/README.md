@@ -67,7 +67,7 @@ The playbook implements the following tasks:
 The following screenshot displays the result of running `sudo docker ps` after successfully configuring the ELK instance.
 
 ![docker ps output](https://github.com/CyberStrax/Strax-Stuff/blob/main/README/Images/docker_ps.png)
-```Bash
+```
 sysadmin@elk:~$ sudo docker ps
 CONTAINER ID        IMAGE               COMMAND                  CREATED             STATUS              PORTS                                                                              NAMES
 842caa422ed8        sebp/elk            /usr/local/bin/star…     3 hours ago         Up 3 hours          0.0.0.0:5044->5044/tcp, 0.0.0.0:5601->5601/tcp, 0.0.0.0:9200->9200/tcp, 9300/tcp   elk
@@ -92,8 +92,20 @@ In order to use the playbook, you will need to have an Ansible control node alre
 
 SSH into the control node and follow the steps below:
 - Copy the playbook, `elk.yml`, to `/etc/ansible` on the Jump Box VM, which is serving as the Ansible control node.
-- Update the Ansible `hosts` file to include the Web Server VM IP addresses and the ELK VM IP address, along with instruction to use Python 3. Header elements are utilized in the `hosts` file to ensure IP addresses are properly grouped to differentiate where each service should be installed. A sample of the Ansible `hosts` file:
- 
+- Update the Ansible `hosts` file to include the Web Server VM IP addresses and the ELK VM IP address, along with instruction to use Python 3. Header elements are utilized in the `hosts` file to ensure IP addresses are properly grouped to differentiate where each service should be installed. The following is a sample of the Ansible `hosts` file:
+```
+# List the IP Addresses of your webservers
+# You should have at least 2 IP addresses
+[webservers]
+10.0.0.11 ansible_python_interpreter=/usr/bin/python3
+10.0.0.12 ansible_python_interpreter=/usr/bin/python3
+10.0.0.4 ansible_python_interpreter=/usr/bin/python3
+
+# List the IP address of your ELK server
+# There should only be one IP address
+[elk]
+10.1.0.4 ansible_python_interpreter=/usr/bin/python3
+```
 - Run the playbook, and navigate to `http://10.1.0.4:5601/app/kibana` to check that the installation worked as expected.
 
 _TODO: Answer the following questions to fill in the blanks:_
