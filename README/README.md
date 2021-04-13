@@ -39,32 +39,32 @@ The configuration details of each machine may be found below.
 
 The machines on the internal network are not exposed to the public Internet. 
 
-Only the jump box machine can accept connections from the Internet. Access to this machine is only allowed from the IP address `173.174.113.47`.
+Only the jump box machine can accept connections from the Internet. Access to this machine is only allowed from the IP address `173.174.113.48`.
 
-Machines within the network can only be accessed by each other. However, the only IP address allowed to access the ELK VM is `173.174.113.47`.
+Machines within the network can only be accessed by each other. However, the only IP address allowed to access the ELK VM is `173.174.113.48`.
 
 A summary of the access policies in place can be found in the table below.
 
 | Name     | Publicly Accessible | Allowed IP Addresses |
 |----------|---------------------|----------------------|
-| Jump Box | Yes                 | 173.174.113.47       |
+| Jump Box | Yes                 | 173.174.113.48       |
 | Web 1    | No                  | 10.0.0.1-254         |
 | Web 2    | No                  | 10.0.0.1-254         |
 | Web 3    | No                  | 10.0.0.1-254         |
-| ELK VM   | Yes                 | 173.174.113.47       |
+| ELK VM   | Yes                 | 173.174.113.48       |
 
 ### Elk Configuration
 
 Ansible was used to automate configuration of the ELK machine. No configuration was performed manually, which is advantageous because it turns a complex, time consuming task into something that can be done to scale quickly and efficiently, freeing up time for other tasks.
 
 The playbook implements the following tasks:
-- First the docker.io service is installed; this service installs the Docker platform.
-- Next, python3-pip is installed, which is a package management system that installs Python 3.
-- Then docker is installed, which is a module that allows the use of Docker commands within Python apps.
-- A memory expansion is then required because of requirements to run Docker. The minimum RAM that needs to be dedicated to docker is 262,144, which is what it was set at for this instance.
+- First the `docker.io` service is installed; this service installs the Docker platform.
+- Next, `python3-pip` is installed, which is a package management system that installs Python 3.
+- Then the `docker` module is installed, which allows the use of Docker commands within Python apps.
+- A memory expansion is required to run the Elk container. The minimum value that the RAM needs to be set at is `262144`.
 - Lastly, the Docker ELK container is downloaded and launched, ensuring that the service is enabled on boot.
 
-The following screenshot displays the result of running `docker ps` after successfully configuring the ELK instance.
+The following screenshot displays the result of running `sudo docker ps` after successfully configuring the ELK instance.
 
 ![docker ps output](https://github.com/CyberStrax/Strax-Stuff/blob/main/README/Images/docker_ps_output.png)
 
@@ -82,13 +82,13 @@ These Beats allow us to collect the following information from each machine:
 - **Filebeat:** Filebeat serves the purpose of monitoring log files in specified directories and log events, so they can be forwarded to Logstash and Elasticsearch for indexing; the log data consists of what files have changed and when.
 - **Metricbeat:** Metricbeat allows for the monitoring of various metrics of machines on a system in order to gauge their operational health. Commonly, metrics such as CPU usage and uptime are chosen, along with other relavant ones, to ensure there is no misuse or suspicious activity.
 
-### Using the Playbook
-In order to use the playbook, you will need to have an Ansible control node already configured. Assuming you have such a control node provisioned: 
+### Using the Playbooks
+In order to use the playbooks, you will need to have an Ansible control node already configured. Assuming you have such a control node provisioned: 
 
 SSH into the control node and follow the steps below:
 - Copy playbooks `filebeat.yml` and `metricbeat.yml` to the Jump Box VM, which is serving as the Ansible control node.
 - Update the `Ansible configuration` file to include the admin username.
-- Update the `hosts` file to include the web server VM IP addresses and the ELK VM IP address, along with instruction to use Python 3. 
+- Update the Ansible `hosts` file to include the web server VM IP addresses and the ELK VM IP address, along with instruction to use Python 3. 
 - Run the playbook, and navigate to `http://10.1.0.4:5601/app/kibana` to check that the installation worked as expected.
 
 _TODO: Answer the following questions to fill in the blanks:_
