@@ -66,7 +66,7 @@ The playbook implements the following tasks:
 
 The following screenshot displays the result of running `sudo docker ps` after successfully configuring the ELK instance.
 
-![docker ps output](https://github.com/CyberStrax/Strax-Stuff/blob/main/README/Images/docker_ps_output.png)
+![docker ps output](https://github.com/CyberStrax/Strax-Stuff/blob/main/README/Images/docker_ps.png)
 
 ### Target Machines & Beats
 This ELK server is configured to monitor the following machines:
