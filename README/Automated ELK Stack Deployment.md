@@ -89,7 +89,7 @@ These Beats allow us to collect the following information from each machine:
 In order to use the playbook, you will need to have an Ansible control node already configured. Assuming you have such a control node provisioned: 
 
 SSH into the control node and follow the steps below:
-- Copy the playbook, `elk.yml`, to `/etc/ansible` on the Jump Box VM, which is serving as the Ansible control node.
+- Copy the playbook, `elk.yml`, to `/etc/ansible` on the Jump Box VM, which is serving as the Ansible control node. To copy the playbook and ensure formatting is not altered, use the command `https://github.com/CyberStrax/Strax-Stuff/blob/main/README/elk-playbook >> /etc/ansible/elk.yml` to obtain and place it in the proper location.
 - Update the Ansible `hosts` file by using `sudo /etc/ansible/hosts`. Information added will include the Web Server VM IP addresses and the ELK VM IP address, along with instruction to use Python 3. Header elements are utilized in the `hosts` file to ensure IP addresses are properly grouped to differentiate where each service should be installed. In this instance, `webservers` and `elk` were used as headers. The following is a sample of the Ansible `hosts` file:
 ```
 # List the IP Addresses of your webservers
