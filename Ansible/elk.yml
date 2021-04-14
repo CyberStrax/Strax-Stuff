@@ -1,12 +1,13 @@
 ---
 - name: Configure Elk VM with Docker
   hosts: elk
-  remote_user: azadmin
+  remote_user: red-team
   become: true
   tasks:
     - name: Install docker.io
       apt:
         update_cache: yes
+        force_apt_get: yes
         name: docker.io
         state: present
 
@@ -28,6 +29,9 @@
         state: present
         reload: yes
 
+    - name: Make Use more memory permanent setting
+      command: sysctl -p /etc/sysctl.conf
+
     - name: download and launch a docker elk container
       docker_container:
         name: elk
@@ -39,7 +43,7 @@
           - 9200:9200
           - 5044:5044
 
-    - name: Enable service docker on boot
+    - name: Enable docker service on boot
       systemd:
         name: docker
         enabled: yes
