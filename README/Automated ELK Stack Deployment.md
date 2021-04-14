@@ -10,7 +10,7 @@ This document contains the following details:
 
 The files in this repository were used to configure the network depicted below.
 
-![Azure Diagram](https://github.com/CyberStrax/Strax-Stuff/blob/main/README/Images/Azure%20Diagram.png)
+![Azure Diagram](https://github.com/CyberStrax/Strax-Stuff/blob/main/README/Images/Azure_Diagram.png)
 
 These files have been tested and used to generate a live ELK deployment on Azure. They can be used to either recreate the entire deployment pictured above. Alternatively, select portions of the _____ file may be used to install only certain pieces of it, such as Filebeat.
 
