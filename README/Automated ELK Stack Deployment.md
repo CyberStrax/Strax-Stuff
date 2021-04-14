@@ -104,5 +104,3 @@ SSH into the control node and follow the steps below:
 10.1.0.4 ansible_python_interpreter=/usr/bin/python3
 ```
 - Run the playbook using `ansible-playbook elk.yml`, and navigate to `http://10.1.0.4:5601/app/kibana` to check that the installation worked as expected.
-
-_As a **Bonus**, provide the specific commands the user will need to run to download the playbook, update the files, etc._
