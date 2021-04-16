@@ -18,7 +18,7 @@ These files have been tested and used to generate a live ELK deployment on Azure
 
 The main purpose of this network is to expose a load-balanced and monitored instance of DVWA, the D*mn Vulnerable Web Application.
 
-Load balancing ensures that the application will be highly available, in addition to restricting inbound access to the network. Load balancers are a useful tool because they divide incoming traffic between servers, ensuring efficiency. A jump box on a network effectively serves as a gateway router, forcing all traffic through a single node that is public facing. A single node is much easier to secure and monitor, as opposed to multiple VMs; this configuration is called a *fan-in.
+Load balancing ensures that the application will be highly available, in addition to restricting inbound access to the network. Load balancers are a useful tool because they divide incoming traffic between servers, ensuring efficiency. A jump box on a network effectively serves as a gateway router, forcing all traffic through a single node that is public facing. A single node is much easier to secure and monitor, as opposed to multiple VMs; this configuration is called a **fan-in**.
 
 Integrating an ELK server allows users to easily monitor the vulnerable VMs for changes to the file systems of the VMs on the network, as well as watch system metrics. Filebeat serves the function of watching the file systems for changes and when they occurred, collecting the desired log files. Metricbeat collects specific system information about machines on a network, such as CPU usage and uptime.
 
