@@ -65,7 +65,7 @@ The following code block displays the result of running `sudo docker ps` after s
 ```
 red-team@ELK-Server:~$ sudo docker ps
 CONTAINER ID        IMAGE               COMMAND                  CREATED             STATUS              PORTS                                                                              NAMES
-9e0c23d072c1        sebp/elk:761        "/usr/local/bin/star…"   3 weeks ago         Up 7 minutes        0.0.0.0:5044->5044/tcp, 0.0.0.0:5601->5601/tcp, 0.0.0.0:9200->9200/tcp, 9300/tcp   elk
+9e0c23d072c1        sebp/elk:761        "/usr/local/bin/starâ€¦"   3 weeks ago         Up 7 minutes        0.0.0.0:5044->5044/tcp, 0.0.0.0:5601->5601/tcp, 0.0.0.0:9200->9200/tcp, 9300/tcp   elk
 red-team@ELK-Server:~$
 ```
 

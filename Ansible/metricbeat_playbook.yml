@@ -1,5 +1,9 @@
 ---
+<<<<<<< HEAD
 - name: install metric beat
+=======
+- name: install metricbeat
+>>>>>>> f7247a097fe6e132612a0bb85200cdebd031b148
   hosts: webservers
   become: true
   tasks:
@@ -17,13 +21,24 @@
   - name: enable and configure docker module for metric beat
     command: metricbeat modules enable docker
 
+<<<<<<< HEAD
   - name: setup metric beat
     command: metricbeat setup
 
   - name: start metric beat
+=======
+  - name: setup metricbeat
+    command: metricbeat setup
+
+  - name: start metricbeat
+>>>>>>> f7247a097fe6e132612a0bb85200cdebd031b148
     command: service metricbeat start
 
   - name: enable service metricbeat on boot
     systemd:
       name: metricbeat
+<<<<<<< HEAD
       enabled: yes
+=======
+      enabled: yes
+>>>>>>> f7247a097fe6e132612a0bb85200cdebd031b148
