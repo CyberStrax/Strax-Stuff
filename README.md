@@ -12,7 +12,7 @@ The files in this repository were used to configure the network depicted below.
 
 ![Azure Diagram](https://github.com/CyberStrax/Strax-Stuff/blob/main/Images/Azure-Diagram.png)
 
-These files have been tested and used to generate a live ELK deployment on Azure. They can be used to either recreate the entire deployment pictured above. Alternatively, select portions of the ![elk.yml](https://github.com/CyberStrax/Strax-Stuff/blob/main/Playbooks/elk.yml) `elk.yml` file may be used to install only certain pieces of it, such as Filebeat.
+These files have been tested and used to generate a live ELK deployment on Azure. They can be used to either recreate the entire deployment pictured above. Alternatively, select portions of the ![elk.yml](https://github.com/CyberStrax/Strax-Stuff/blob/main/Playbooks/elk.yml) file may be used to install only certain pieces of it, such as Filebeat.
 
 ### Description of the Topology
 
@@ -76,8 +76,8 @@ This ELK server is configured to monitor the following machines:
 - Web-3 at `10.0.0.4`
 
 We have installed the following Beats on these machines:
-- Filebeat
-- Metricbeat
+- ![Filebeat](https://github.com/CyberStrax/Strax-Stuff/blob/main/Playbooks/filebeat_playbook.yml)
+- ![Metricbeat](https://github.com/CyberStrax/Strax-Stuff/blob/main/Playbooks/metricbeat_playbook.yml)
 
 These Beats allow us to collect the following information from each machine:
 - **Filebeat** serves the purpose of monitoring log files in specified directories and log events, so they can be forwarded to Logstash and Elasticsearch for indexing; the log data consists of what files have changed and when.
@@ -87,7 +87,7 @@ These Beats allow us to collect the following information from each machine:
 In order to use the playbook, you will need to have an Ansible control node already configured. Assuming you have such a control node provisioned: 
 
 SSH into the control node and follow the steps below:
-- Copy the playbook `elk.yml` to `/etc/ansible` on the Jump Box VM, which is serving as the Ansible control node. To copy the playbook and ensure formatting is not altered, use the command `curl https://github.com/CyberStrax/Strax-Stuff/blob/main/Ansible/elk.yml >> /etc/ansible/elk.yml` to obtain it and place it in the proper location.
+- Copy the playbook ![elk.yml](https://github.com/CyberStrax/Strax-Stuff/blob/main/Playbooks/elk.yml) to `/etc/ansible` on the Jump Box VM, which is serving as the Ansible control node. To copy the playbook and ensure formatting is not altered, use the command `curl https://github.com/CyberStrax/Strax-Stuff/blob/main/Playbooks/elk.yml >> /etc/ansible/elk.yml` to obtain it and place it in the proper location.
 - Update the Ansible `hosts` file by using `nano /etc/ansible/hosts`. Information added will include the Web Server VM IP addresses and the ELK VM IP address, along with instruction to use Python 3. The playbooks utilized in this deployment identify the host as either `webservers` or `elk`. The headers used in the `hosts` file correspond with the host names used in the playbooks in order to ensure services are installed to the proper IP address. The following code block is a sample of the Ansible `hosts` file:
 ```
 # List the IP Addresses of your webservers
