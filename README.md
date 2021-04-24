@@ -10,7 +10,11 @@ This document contains the following details:
 
 The files in this repository were used to configure the network depicted below.
 
+<<<<<<< HEAD
 ![Azure Diagram](https://github.com/CyberStrax/Strax-Stuff/blob/main/README/Images/Azure-Diagram.png)
+=======
+![Azure Diagram](https://github.com/CyberStrax/Strax-Stuff/blob/main/Project%201%20-%20Automated-ELK-Stack-Deployment/Images/Azure-Diagram.png)
+>>>>>>> 3861df3c0ca7b08e1bc2558b6ab9093c5a6b30a4
 
 These files have been tested and used to generate a live ELK deployment on Azure. They can be used to either recreate the entire deployment pictured above. Alternatively, select portions of the `elk.yml` file may be used to install only certain pieces of it, such as Filebeat.
 
